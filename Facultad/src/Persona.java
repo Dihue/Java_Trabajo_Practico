@@ -2,7 +2,7 @@ public abstract class Persona {
     String nombre, apellido;
     int legajo;
 
-    public Persona(String nombre, String apellido, int legajo){
+    Persona(String nombre, String apellido, int legajo){
         this.nombre=nombre;
         this.apellido=apellido;
         this.legajo=legajo;
@@ -35,9 +35,11 @@ public abstract class Persona {
     }
 
 
-    void modificarDatos()
+    void modificarDatos(String nombre, String apellido, int legajo)
     {
-
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.legajo=legajo;
     }
 
 }

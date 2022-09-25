@@ -22,4 +22,9 @@ public class Profesor extends Persona{
     public void setAntiguedad(int antiguedad) {
         this.antiguedad = antiguedad;
     }
+
+    public double calcularSueldo(double basico){
+        double sueldo=basico+antiguedad*(basico*10)/100;
+        return sueldo;
+    }
 }

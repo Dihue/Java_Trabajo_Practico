@@ -34,12 +34,13 @@ public abstract class Persona {
         this.legajo = legajo;
     }
 
-
     void modificarDatos(String nombre, String apellido, int legajo)
     {
         this.nombre=nombre;
         this.apellido=apellido;
         this.legajo=legajo;
     }
+
+
 
 }

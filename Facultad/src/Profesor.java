@@ -1,11 +1,16 @@
 public class Profesor extends Persona{
-    double basico;
-    int antiguedad;
+    // Atributos
+    private double basico;
+    private int antiguedad;
 
-    public Profesor(String nombre, String apellido, int legajo) {
+    // Constructor
+    public Profesor(String nombre, String apellido, int legajo, double basico, int antiguedad) {
         super(nombre, apellido, legajo);
+        this.basico = basico;
+        this.antiguedad = antiguedad;
     }
 
+    // Getters y Setters
     public double getBasico() {
         return basico;
     }
@@ -29,11 +34,12 @@ public class Profesor extends Persona{
                 "Apellido: "+apellido+"\n"+
                 "Nro Legajo: "+legajo+"\n"+
                 "Sueldo básico: "+basico+"\n"+
-                "Anios de antiguedad: "+antiguedad;
+                "Años de antigüedad: "+antiguedad;
     }
 
     public double calcularSueldo(double basico){
-        double sueldo=basico+antiguedad*(basico*10)/100;
+        double sueldo = basico + antiguedad * (basico * 10) / 100;
         return sueldo;
     }
+
 }

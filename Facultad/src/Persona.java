@@ -1,13 +1,17 @@
 public abstract class Persona {
-    String nombre, apellido;
+    // Atributos
+    String nombre;
+    String apellido;
     int legajo;
 
+    // Constructor
     Persona(String nombre, String apellido, int legajo){
-        this.nombre=nombre;
-        this.apellido=apellido;
-        this.legajo=legajo;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.legajo = legajo;
     }
 
+    // Getters y Setters
     public String getNombre() {
         return nombre;
     }
@@ -34,13 +38,10 @@ public abstract class Persona {
         this.legajo = legajo;
     }
 
-    void modificarDatos(String nombre, String apellido, int legajo)
-    {
-        this.nombre=nombre;
-        this.apellido=apellido;
-        this.legajo=legajo;
+    public void modificarDatos(String nombre, String apellido, int legajo) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.legajo = legajo;
     }
-
-
 
 }

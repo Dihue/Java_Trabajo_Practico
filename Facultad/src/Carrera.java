@@ -1,15 +1,15 @@
 import java.util.List;
 
-public class Carrera {
+public class Carrera implements iInformacion {
 	// Atributos
 	private String nombre;
 	private List<Materia> materias;
 
+	// Métodos propios
 	public void agregarMateria(Materia materia) {
 		materias.add(materia);
 	}
 
-	// Métodos propios
 	public void eliminarMateria(String nombreMateria) {
 		for (Materia materia: materias) {
 			if (materia.getNombre().equals(nombreMateria)) {
@@ -54,5 +54,16 @@ public class Carrera {
 	public String toString() {
 		return "\n|--> " + nombre + "\n" +
 			"\tMaterias: "  + materias;
+	}
+
+	// Métodos de la Interface
+	@Override
+	public int verCantidad() {
+		return 0;
+	}
+
+	@Override
+	public String listarContenido() {
+		return null;
 	}
 }

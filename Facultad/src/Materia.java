@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class Materia {
+public class Materia implements iInformacion {
 	// Atributos
 	private String nombre;
 	private Profesor titular;
@@ -13,7 +13,7 @@ public class Materia {
 
 	public void eliminarEstudiante(String nombre) {
 		for (Estudiante estudiante: estudiantes) {
-			if (estudiante.getNombre() == nombre) {
+			if (estudiante.getNombre().equals(nombre)) {
 				estudiantes.remove(estudiante);
 			}
 		}
@@ -57,5 +57,16 @@ public class Materia {
 		return "\n\t|--> " + nombre + "\n" +
 			"\t\tTitular: "  + titular + "\n" +
 			"\t\tEstudiantes: " + estudiantes;
+	}
+
+	// Métodos de la Interface
+	@Override
+	public int verCantidad() {
+		return 0;
+	}
+
+	@Override
+	public String listarContenido() {
+		return null;
 	}
 }

@@ -10,11 +10,13 @@ public class Main {
 		Profesor profesorBase = new Profesor(null, null, 0, 0, 0);
 
 		List<Carrera> carrerasEnLista = new LinkedList<>();
+		List<Materia> materiasEnLista = new LinkedList<>();
 		Facultad utn = new Facultad("FRRe", carrerasEnLista);
 
 
 		int opcion = 0;
 		int opcion2 = 0;
+		int num=0;
 		String dato = null;
 		Scanner scan = new Scanner(System.in);
 
@@ -24,6 +26,7 @@ public class Main {
 
 		do {
 			System.out.println("\n- - - - - Menú Principal - - - - -\n");
+			System.out.println("-> 0. Salir");
 			System.out.println("-> 1. Agregar una carrera");
 			System.out.println("-> 2. Eliminar una carrera");
 			System.out.println("-> 3. Agregar una materia");
@@ -32,6 +35,10 @@ public class Main {
 			System.out.println("-> 6. Agregar un estudiante a una materia");
 			System.out.println("-> 7. Eliminar un estudiante de una materia");
 			System.out.println("-> 8. Modificar profesor de una materia");
+			System.out.println("-> 9. Ver carreras");
+			System.out.println("-> 10. Ver materias");
+
+
 			//System.out.println("-> 9. Salir");
 
 			System.out.print("\nOpción: ");
@@ -51,7 +58,7 @@ public class Main {
 						System.out.println(">Error");
 					}
 
-					List<Materia> materiasEnLista = new LinkedList<>();
+					//List<Materia> materiasEnLista = new LinkedList<>();
 
 					Carrera carrera = new Carrera(dato, materiasEnLista);
 					utn.agregarCarrera(carrera);
@@ -59,11 +66,11 @@ public class Main {
 
 				case 2:
 					System.out.println("Primero, seleccione la carrera a eliminar: ");
-					int num1 = 0;
+					num = 0;
 
 					for (Carrera carreraNombre: carrerasEnLista) {
-						System.out.println("-> " + (num1+1)+ ". " + carreraNombre.getNombre());
-						num1++;
+						System.out.println("-> " + (num+1)+ ". " + carreraNombre.getNombre());
+						num++;
 					}
 
 					System.out.print("\nOpción: ");
@@ -80,11 +87,11 @@ public class Main {
 				case 3:
 
 					System.out.println("Primero, seleccione la carrera: ");
-					int num2 = 0;
+					num = 0;
 
 					for (Carrera carreraNombre: carrerasEnLista) {
-						System.out.println("-> " + (num2+1)+ ". " + carreraNombre.getNombre());
-						num2++;
+						System.out.println("-> " + (num+1)+ ". " + carreraNombre.getNombre());
+						num++;
 					}
 
 					System.out.print("\nOpción: ");
@@ -107,11 +114,11 @@ public class Main {
 
 				case 4:
 					System.out.println("Primero, seleccione la carrera: ");
-					int num3 = 0;
+					num = 0;
 
 					for (Carrera carreraNombre: carrerasEnLista) {
-						System.out.println("-> " + (num3+1)+ ". " + carreraNombre.getNombre());
-						num3++;
+						System.out.println("-> " + (num+1)+ ". " + carreraNombre.getNombre());
+						num++;
 					}
 
 					System.out.print("\nOpción: ");
@@ -122,6 +129,15 @@ public class Main {
 					}
 
 					System.out.println("\nIngrese nombre de la materia a eliminar: ");
+
+					//test
+					num=0;
+					for (Materia materiaNombre: materiasEnLista) {
+						System.out.println("-> " + (num+1)+ ". " + materiaNombre.getNombre());
+						num++;
+					}
+					//test
+
 					try {
 						dato = scan.next();
 					} catch (Exception e) {
@@ -132,12 +148,12 @@ public class Main {
 					break;
 
 				case 5:
+					num=0;
 					System.out.println("Primero, seleccione la carrera: ");
-					int num4 = 0;
 
 					for (Carrera carreraNombre: carrerasEnLista) {
-						System.out.println("-> " + (num4+1)+ ". " + carreraNombre.getNombre());
-						num4++;
+						System.out.println("-> " + (num+1)+ ". " + carreraNombre.getNombre());
+						num++;
 					}
 
 					System.out.print("\nOpción: ");
@@ -154,9 +170,14 @@ public class Main {
 						System.out.println(">Error");
 					}
 
-					//buscar materia ?
+					num=0;
+					for (Materia materiaNombre: materiasEnLista) {
+						System.out.println("-> " + (num+1)+ ". " + materiaNombre.getNombre());
+						num++;
+					}
 
-					System.out.println("Materia encontrada");
+					carrerasEnLista.get(opcion-1).encontrarMateria(dato);
+
 					System.out.println("¿Desea eliminar?");
 					System.out.println("\nSi = 1 / No =  0");
 					try {
@@ -169,13 +190,13 @@ public class Main {
 					}
 					break;
 
-				case 6:
+				case 6: //hacer
 					System.out.println("Primero, seleccione la carrera: ");
-					int num5=0;
+					num=0;
 
 					for (Carrera carreraNombre: carrerasEnLista) {
-						System.out.println("-> "+(num5+1)+". " +carreraNombre.getNombre());
-						num5++;
+						System.out.println("-> "+(num+1)+". " +carreraNombre.getNombre());
+						num++;
 					}
 					System.out.print("\nOpción: ");
 					try {
@@ -190,17 +211,107 @@ public class Main {
 					} catch(Exception e) {
 						System.out.println(">Error");
 					}
+					System.out.println("\nIngrese nombre del alumno a agregar: ");
+					//agregar alumno
 					break;
-				/*case 9:
-					System.out.println("Programa finalizado.");
-					System.exit(0);
-				 */
+
+				case 7: //hacer
+					System.out.println("Primero, seleccione la carrera: ");
+					num=0;
+
+					for (Carrera carreraNombre: carrerasEnLista) {
+						System.out.println("-> "+(num+1)+". " +carreraNombre.getNombre());
+						num++;
+					}
+					System.out.print("\nOpción: ");
+					try {
+						opcion=scan.nextInt();
+					} catch(Exception e){
+						System.out.println(">Valor erróneo, se debe ingresar solo números enteros");
+					}
+
+					System.out.println("\nIngrese nombre de la materia que desea: ");
+					try {
+						dato=scan.next();
+					} catch(Exception e) {
+						System.out.println(">Error");
+					}
+					System.out.println("\nIngrese nombre del alumno a eliminar: ");
+					//eliminar alumno
+					break;
+
+				case 8: //hacer
+					System.out.println("Primero, seleccione la carrera: ");
+					num=0;
+
+					for (Carrera carreraNombre: carrerasEnLista) {
+						System.out.println("-> "+(num+1)+". " +carreraNombre.getNombre());
+						num++;
+					}
+					System.out.print("\nOpción: ");
+					try {
+						opcion=scan.nextInt();
+					} catch(Exception e){
+						System.out.println(">Valor erróneo, se debe ingresar solo números enteros");
+					}
+
+					System.out.println("\nIngrese nombre de la materia que desea: ");
+					try {
+						dato=scan.next();
+					} catch(Exception e) {
+						System.out.println(">Error");
+					}
+
+					carrerasEnLista.get(opcion-1).encontrarMateria(dato);
+
+					System.out.println("\nIngrese nombre del nuevo profesor titular de la materia: ");
+					try {
+						dato=scan.next();
+					} catch(Exception e) {
+						System.out.println(">Error");
+					}
+
+					break;
+				case 9:
+					num=0;
+					System.out.println("\nListado de carreras en "+utn.getNombre()+": ");
+					for (Carrera carreraNombre: carrerasEnLista) {
+						System.out.println("-> "+(num+1)+". " +carreraNombre.getNombre());
+						num++;
+					}
+					break;
+				case 10:
+					System.out.println("Primero, seleccione la carrera: ");
+					num = 0;
+
+					for (Carrera carreraNombre: carrerasEnLista) {
+						System.out.println("-> " + (num+1)+ ". " + carreraNombre.getNombre());
+						num++;
+					}
+
+					System.out.print("\nOpción: ");
+					try {
+						opcion = scan.nextInt();
+					} catch (Exception e) {
+						System.out.println(">Valor erróneo, se debe ingresar solo números enteros");
+					}
+
+					num=0;
+					for (Materia materiaNombre: materiasEnLista) {
+						System.out.println("-> " + (num+1)+ ". " + materiaNombre.getNombre());
+						num++;
+					}
+					break;
 			}
 
 		} while (opcion > 0);
 		System.out.println("Programa finalizado.");
 
 		//System.out.println(utn.toString());
+
+		/*case 9:
+					System.exit(0);
+				 */
 	}
 
 }

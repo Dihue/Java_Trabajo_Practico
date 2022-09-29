@@ -16,7 +16,7 @@ public class Main {
 
 		int opcion = 0;
 		int opcion2 = 0;
-		int num=0;
+		int num;
 		String dato = null;
 		Scanner scan = new Scanner(System.in);
 
@@ -25,16 +25,16 @@ public class Main {
 		System.out.println("---------------------------------------------------");
 
 		do {
-			System.out.println("\n- - - - - Menú Principal - - - - -\n");
+			System.out.println("\n- - - - - - - - -Menú Principal - - - - - - - - - -\n");
 			System.out.println("-> 0. Salir");
 			System.out.println("-> 1. Agregar una carrera");
 			System.out.println("-> 2. Eliminar una carrera");
 			System.out.println("-> 3. Agregar una materia");
 			System.out.println("-> 4. Eliminar una materia");
 			System.out.println("-> 5. Encontrar una materia");
-			System.out.println("-> 6. Agregar un estudiante a una materia");
-			System.out.println("-> 7. Eliminar un estudiante de una materia");
-			System.out.println("-> 8. Modificar profesor de una materia");
+			System.out.println("-> 6. Agregar un estudiante a una materia"); //hacer
+			System.out.println("-> 7. Eliminar un estudiante de una materia"); //hacer
+			System.out.println("-> 8. Modificar profesor de una materia"); // hacer
 			System.out.println("-> 9. Ver carreras");
 			System.out.println("-> 10. Ver materias");
 
@@ -69,7 +69,7 @@ public class Main {
 					num = 0;
 
 					for (Carrera carreraNombre: carrerasEnLista) {
-						System.out.println("-> " + (num+1)+ ". " + carreraNombre.getNombre());
+						System.out.println("-> " + (num+1)+ ". " +carreraNombre.getNombre().substring(0, 1).toUpperCase() +carreraNombre.getNombre().substring(1));
 						num++;
 					}
 
@@ -90,7 +90,7 @@ public class Main {
 					num = 0;
 
 					for (Carrera carreraNombre: carrerasEnLista) {
-						System.out.println("-> " + (num+1)+ ". " + carreraNombre.getNombre());
+						System.out.println("-> " + (num+1)+ ". " +carreraNombre.getNombre().substring(0, 1).toUpperCase() +carreraNombre.getNombre().substring(1));
 						num++;
 					}
 
@@ -117,7 +117,7 @@ public class Main {
 					num = 0;
 
 					for (Carrera carreraNombre: carrerasEnLista) {
-						System.out.println("-> " + (num+1)+ ". " + carreraNombre.getNombre());
+						System.out.println("-> " + (num+1)+ ". " +carreraNombre.getNombre().substring(0, 1).toUpperCase() +carreraNombre.getNombre().substring(1));
 						num++;
 					}
 
@@ -152,7 +152,7 @@ public class Main {
 					System.out.println("Primero, seleccione la carrera: ");
 
 					for (Carrera carreraNombre: carrerasEnLista) {
-						System.out.println("-> " + (num+1)+ ". " + carreraNombre.getNombre());
+						System.out.println("-> " + (num+1)+ ". " +carreraNombre.getNombre().substring(0, 1).toUpperCase() +carreraNombre.getNombre().substring(1));
 						num++;
 					}
 
@@ -172,7 +172,7 @@ public class Main {
 
 					num=0;
 					for (Materia materiaNombre: materiasEnLista) {
-						System.out.println("-> " + (num+1)+ ". " + materiaNombre.getNombre());
+						System.out.println("-> " + (num+1)+ ". " + materiaNombre.getNombre().toUpperCase());
 						num++;
 					}
 
@@ -195,7 +195,7 @@ public class Main {
 					num=0;
 
 					for (Carrera carreraNombre: carrerasEnLista) {
-						System.out.println("-> "+(num+1)+". " +carreraNombre.getNombre());
+						System.out.println("-> "+(num+1)+". " +carreraNombre.getNombre().substring(0, 1).toUpperCase() +carreraNombre.getNombre().substring(1));
 						num++;
 					}
 					System.out.print("\nOpción: ");
@@ -220,7 +220,7 @@ public class Main {
 					num=0;
 
 					for (Carrera carreraNombre: carrerasEnLista) {
-						System.out.println("-> "+(num+1)+". " +carreraNombre.getNombre());
+						System.out.println("-> "+(num+1)+". " +carreraNombre.getNombre().substring(0, 1).toUpperCase() +carreraNombre.getNombre().substring(1));
 						num++;
 					}
 					System.out.print("\nOpción: ");
@@ -245,7 +245,7 @@ public class Main {
 					num=0;
 
 					for (Carrera carreraNombre: carrerasEnLista) {
-						System.out.println("-> "+(num+1)+". " +carreraNombre.getNombre());
+						System.out.println("-> "+(num+1)+". " +carreraNombre.getNombre().substring(0, 1).toUpperCase() +carreraNombre.getNombre().substring(1));
 						num++;
 					}
 					System.out.print("\nOpción: ");
@@ -262,6 +262,12 @@ public class Main {
 						System.out.println(">Error");
 					}
 
+					num=0;
+					for (Materia materiaNombre: materiasEnLista) {
+						System.out.println("-> " + (num+1)+ ". " + materiaNombre.getNombre());
+						num++;
+					}
+
 					carrerasEnLista.get(opcion-1).encontrarMateria(dato);
 
 					System.out.println("\nIngrese nombre del nuevo profesor titular de la materia: ");
@@ -271,12 +277,14 @@ public class Main {
 						System.out.println(">Error");
 					}
 
+					//traer materia - setTitular
+
 					break;
 				case 9:
 					num=0;
 					System.out.println("\nListado de carreras en "+utn.getNombre()+": ");
 					for (Carrera carreraNombre: carrerasEnLista) {
-						System.out.println("-> "+(num+1)+". " +carreraNombre.getNombre());
+						System.out.println("-> "+(num+1)+". " +carreraNombre.getNombre().substring(0, 1).toUpperCase() +carreraNombre.getNombre().substring(1));
 						num++;
 					}
 					break;
@@ -285,7 +293,7 @@ public class Main {
 					num = 0;
 
 					for (Carrera carreraNombre: carrerasEnLista) {
-						System.out.println("-> " + (num+1)+ ". " + carreraNombre.getNombre());
+						System.out.println("-> " + (num+1)+ ". " + carreraNombre.getNombre().substring(0, 1).toUpperCase() +carreraNombre.getNombre().substring(1));
 						num++;
 					}
 

@@ -6,6 +6,7 @@ public class Carrera implements iInformacion {
 	private List<Materia> materias;
 
 	// Métodos propios
+
 	public void agregarMateria(Materia materia) {
 		materias.add(materia);
 	}

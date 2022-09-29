@@ -18,8 +18,10 @@ public class Main {
 		String dato = null;
 		Scanner scan = new Scanner(System.in);
 
-
+		System.out.println("\n---------------------------------------------------");
 		System.out.println("Bienvenido/a al sistema de gestión de la facultad");
+		System.out.println("---------------------------------------------------");
+
 		do {
 			System.out.println("\n- - - - - Menú Principal - - - - -\n");
 			System.out.println("-> 1. Agregar una carrera");
@@ -154,8 +156,9 @@ public class Main {
 
 					//buscar materia
 
-					System.out.println("Materia encontrada - Desea eliminar?");
-					System.out.println("Si = 1 / No =  ");
+					System.out.println("Materia encontrada");
+					System.out.println("¿Desea eliminar?");
+					System.out.println("\nSi = 1 / No =  0");
 					try {
 						opcion2=scan.nextInt();
 					} catch (Exception e) {

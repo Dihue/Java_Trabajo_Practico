@@ -21,7 +21,7 @@ public class Main {
 		Scanner scan = new Scanner(System.in);
 
 		System.out.println("\n---------------------------------------------------");
-		System.out.println("Bienvenido/a al sistema de gestión de la facultad");
+		System.out.println(" Bienvenido/a al sistema de gestión de la facultad");
 		System.out.println("---------------------------------------------------");
 
 		do {

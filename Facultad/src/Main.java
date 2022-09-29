@@ -38,7 +38,7 @@ public class Main {
 			try {
 				opcion = scan.nextInt();
 			} catch (Exception e) {
-				System.out.println("Valor erróneo, se debe ingresar solo números enteros");
+				System.out.println(">Valor erróneo, se debe ingresar solo números enteros");
 			}
 
 
@@ -48,7 +48,7 @@ public class Main {
 					try {
 						dato = scan.next();
 					} catch (Exception e) {
-						System.out.println("Error");
+						System.out.println(">Error");
 					}
 
 					List<Materia> materiasEnLista = new LinkedList<>();
@@ -70,7 +70,7 @@ public class Main {
 					try {
 						opcion = scan.nextInt();
 					} catch (Exception e) {
-						System.out.println("Valor erróneo, se debe ingresar solo números enteros");
+						System.out.println(">Valor erróneo, se debe ingresar solo números enteros");
 					}
 
 					String nombreCarrera = carrerasEnLista.get(opcion-1).getNombre();
@@ -91,14 +91,14 @@ public class Main {
 					try {
 						opcion = scan.nextInt();
 					} catch (Exception e) {
-						System.out.println("Valor erróneo, se debe ingresar solo números enteros");
+						System.out.println(">Valor erróneo, se debe ingresar solo números enteros");
 					}
 
 					System.out.println("\nIngrese nombre de la materia: ");
 					try {
 						dato = scan.next();
 					} catch (Exception e) {
-						System.out.println("Error");
+						System.out.println(">Error");
 					}
 
 					Materia materiaAgregada = new Materia(dato, profesorBase, estudiantesEnLista);
@@ -118,14 +118,14 @@ public class Main {
 					try {
 						opcion = scan.nextInt();
 					} catch (Exception e) {
-						System.out.println("Valor erróneo, se debe ingresar solo números enteros");
+						System.out.println(">Valor erróneo, se debe ingresar solo números enteros");
 					}
 
 					System.out.println("\nIngrese nombre de la materia a eliminar: ");
 					try {
 						dato = scan.next();
 					} catch (Exception e) {
-						System.out.println("Error");
+						System.out.println(">Error");
 					}
 
 					carrerasEnLista.get(opcion-1).eliminarMateria(dato);
@@ -142,34 +142,54 @@ public class Main {
 
 					System.out.print("\nOpción: ");
 					try {
-						opcion = scan.nextInt();
-					} catch (Exception e) {
-						System.out.println("Valor erróneo, se debe ingresar solo números enteros");
+						opcion=scan.nextInt();
+					} catch(Exception e) {
+						System.out.println(">Valor erróneo, se debe ingresar solo números enteros");
 					}
 
 					System.out.println("\nIngrese nombre de la materia que desea: ");
 					try {
-						dato = scan.next();
-					} catch (Exception e) {
-						System.out.println("Error");
+						dato=scan.next();
+					} catch(Exception e){
+						System.out.println(">Error");
 					}
 
-					//buscar materia
+					//buscar materia ?
 
 					System.out.println("Materia encontrada");
 					System.out.println("¿Desea eliminar?");
 					System.out.println("\nSi = 1 / No =  0");
 					try {
 						opcion2=scan.nextInt();
-					} catch (Exception e) {
-						System.out.println("Error");
+					} catch (Exception e){
+						System.out.println(">Error");
 					}
 					if(opcion2==1){
 						carrerasEnLista.get(opcion-1).eliminarMateria(dato);
 					}
 					break;
-				case 6:
 
+				case 6:
+					System.out.println("Primero, seleccione la carrera: ");
+					int num5=0;
+
+					for (Carrera carreraNombre: carrerasEnLista) {
+						System.out.println("-> "+(num5+1)+". " +carreraNombre.getNombre());
+						num5++;
+					}
+					System.out.print("\nOpción: ");
+					try {
+						opcion=scan.nextInt();
+					} catch(Exception e){
+						System.out.println(">Valor erróneo, se debe ingresar solo números enteros");
+					}
+
+					System.out.println("\nIngrese nombre de la materia que desea: ");
+					try {
+						dato=scan.next();
+					} catch(Exception e) {
+						System.out.println(">Error");
+					}
 					break;
 				/*case 9:
 					System.out.println("Programa finalizado.");
@@ -178,6 +198,7 @@ public class Main {
 			}
 
 		} while (opcion > 0);
+		System.out.println("Programa finalizado.");
 
 		//System.out.println(utn.toString());
 	}

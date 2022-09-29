@@ -134,13 +134,31 @@ public class Main {
 					carrerasEnLista.get(opcion-1).eliminarMateria(dato);
 					break;
 				case 5:
+					System.out.println("Primero, seleccione la carrera: ");
+					int num4 = 0;
+
+					for (Carrera carreraNombre: carrerasEnLista) {
+						System.out.println("-> " + (num4+1)+ ". " + carreraNombre.getNombre());
+						num4++;
+					}
+
+					System.out.print("\nOpción: ");
+					try {
+						opcion = scan.nextInt();
+					} catch (Exception e) {
+						System.out.println("Valor erróneo, se debe ingresar solo números enteros");
+					}
+
 					System.out.println("\nIngrese nombre de la materia que desea: ");
 					try {
 						dato = scan.next();
 					} catch (Exception e) {
 						System.out.println("Error");
 					}
+
 					//buscar materia
+
+
 					System.out.println("Materia encontrada - Desea eliminar?");
 					System.out.println("Si=1 / No=0 ");
 					try {
@@ -148,13 +166,10 @@ public class Main {
 					} catch (Exception e) {
 						System.out.println("Error");
 					}
-					switch (opcion2){
-						case 1:
-
+					if(opcion2==1){
+						carrerasEnLista.get(opcion-1).eliminarMateria(dato);
 					}
-
-
-
+					break;
 				/*case 9:
 					System.out.println("Programa finalizado.");
 					System.exit(0);

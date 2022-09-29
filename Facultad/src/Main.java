@@ -32,10 +32,6 @@ public class Main {
 			System.out.println("-> 8. Modificar profesor de una materia");
 			//System.out.println("-> 9. Salir");
 
-
-
-
-
 			System.out.print("\nOpción: ");
 			try {
 				opcion = scan.nextInt();
@@ -45,7 +41,6 @@ public class Main {
 
 
 			switch (opcion) {
-
 				case 1:
 					System.out.println("\nIngrese nombre de la carrera: ");
 					try {
@@ -133,6 +128,7 @@ public class Main {
 
 					carrerasEnLista.get(opcion-1).eliminarMateria(dato);
 					break;
+
 				case 5:
 					System.out.println("Primero, seleccione la carrera: ");
 					int num4 = 0;
@@ -158,9 +154,8 @@ public class Main {
 
 					//buscar materia
 
-
 					System.out.println("Materia encontrada - Desea eliminar?");
-					System.out.println("Si=1 / No=0 ");
+					System.out.println("Si = 1 / No =  ");
 					try {
 						opcion2=scan.nextInt();
 					} catch (Exception e) {
@@ -170,6 +165,9 @@ public class Main {
 						carrerasEnLista.get(opcion-1).eliminarMateria(dato);
 					}
 					break;
+				case 6:
+
+					break;
 				/*case 9:
 					System.out.println("Programa finalizado.");
 					System.exit(0);
@@ -178,7 +176,7 @@ public class Main {
 
 		} while (opcion > 0);
 
-		System.out.println(utn.toString());
+		//System.out.println(utn.toString());
 	}
 
 }

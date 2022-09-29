@@ -25,6 +25,15 @@ public class Main {
 			System.out.println("-> 2. Eliminar una carrera");
 			System.out.println("-> 3. Agregar una materia");
 			System.out.println("-> 4. Eliminar una materia");
+			System.out.println("-> 5. Encontrar una materia");
+			System.out.println("-> 6. Agregar un estudiante a una materia");
+			System.out.println("-> 7. Eliminar un estudiante de una materia");
+			System.out.println("-> 8. Modificar profesor de una materia");
+			System.out.println("-> 9. Salir");
+
+
+
+
 
 			System.out.print("\nOpción: ");
 			try {
@@ -123,6 +132,9 @@ public class Main {
 
 					carrerasEnLista.get(opcion-1).eliminarMateria(dato);
 					break;
+				case 9:
+					System.out.println("Programa finalizado.");
+					System.exit(0);
 			}
 
 		} while (opcion > 0);

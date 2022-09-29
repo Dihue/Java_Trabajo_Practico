@@ -14,6 +14,7 @@ public class Main {
 
 
 		int opcion = 0;
+		int opcion2 = 0;
 		String dato = null;
 		Scanner scan = new Scanner(System.in);
 
@@ -132,6 +133,28 @@ public class Main {
 
 					carrerasEnLista.get(opcion-1).eliminarMateria(dato);
 					break;
+				case 5:
+					System.out.println("\nIngrese nombre de la materia que desea: ");
+					try {
+						dato = scan.next();
+					} catch (Exception e) {
+						System.out.println("Error");
+					}
+					//buscar materia
+					System.out.println("Materia encontrada - Desea eliminar?");
+					System.out.println("Si=1 / No=0 ");
+					try {
+						opcion2=scan.nextInt();
+					} catch (Exception e) {
+						System.out.println("Error");
+					}
+					switch (opcion2){
+						case 1:
+
+					}
+
+
+
 				/*case 9:
 					System.out.println("Programa finalizado.");
 					System.exit(0);

@@ -60,11 +60,15 @@ public class Carrera implements iInformacion {
 	// Métodos de la Interface
 	@Override
 	public int verCantidad() {
-		return 0;
+		return materias.size();
 	}
 
 	@Override
 	public String listarContenido() {
-		return null;
+		String contenido = "";
+		for (int i = 0; i < materias.size(); i++) {
+			contenido += materias.get(i).getNombre() + "\n";
+		}
+		return contenido;
 	}
 }

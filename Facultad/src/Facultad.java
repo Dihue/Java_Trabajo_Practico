@@ -63,11 +63,15 @@ public class Facultad implements iInformacion {
     // Métodos de la Interface
     @Override
     public int verCantidad() {
-        return 0;
+        return carreras.size();
     }
 
     @Override
     public String listarContenido() {
-        return null;
+        String contenido = "";
+        for (int i = 0; i < carreras.size(); i++) {
+            contenido += carreras.get(i).getNombre() + "\n";
+        }
+        return contenido;
     }
 }

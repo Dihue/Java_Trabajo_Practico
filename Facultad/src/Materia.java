@@ -12,11 +12,7 @@ public class Materia implements iInformacion {
 	}
 
 	public void eliminarEstudiante(String nombre) {
-		for (Estudiante estudiante: estudiantes) {
-			if (estudiante.getNombre().equals(nombre)) {
-				estudiantes.remove(estudiante);
-			}
-		}
+		estudiantes.removeIf(estudiante -> estudiante.getNombre().equals(nombre));
 	}
 
 	public void modificarTitular(Profesor profesor) {

@@ -3,7 +3,7 @@ import java.util.List;
 public class Carrera implements iInformacion {
 	// Atributos
 	private String nombre;
-	private List<Materia> materias;
+	private  List<Materia> materias;
 
 	// Métodos propios
 

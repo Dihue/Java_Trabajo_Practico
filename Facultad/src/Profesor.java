@@ -30,11 +30,10 @@ public class Profesor extends Persona{
     
 @Override
     public String toString(){
-        return "Nombre: "+nombre+"\n"+
-                "Apellido: "+apellido+"\n"+
-                "Nro Legajo: "+legajo+"\n"+
-                "Sueldo básico: "+basico+"\n"+
-                "Años de antigüedad: "+antiguedad;
+        return " | " + apellido + ", " + nombre +
+            " - Nro Legajo: "+ legajo + "\n" +
+            "Sueldo básico: "+basico + "\n" +
+            "Años de antigüedad: "+ antiguedad;
     }
 
     public double calcularSueldo(double basico){

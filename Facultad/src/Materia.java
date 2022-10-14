@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.List;
 
 public class Materia implements iInformacion {
@@ -58,11 +59,15 @@ public class Materia implements iInformacion {
 	// Métodos de la Interface
 	@Override
 	public int verCantidad() {
-		return 0;
+		return estudiantes.size();
 	}
 
 	@Override
 	public String listarContenido() {
-		return null;
+		String[] arregloContenido = new String[estudiantes.size()];
+		for (int i = 0; i < estudiantes.size(); i++) {
+			arregloContenido[i] = estudiantes.get(i).getNombre() + " " + estudiantes.get(i).getApellido();
+		}
+		return Arrays.toString(arregloContenido);
 	}
 }

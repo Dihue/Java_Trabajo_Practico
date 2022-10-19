@@ -8,6 +8,6 @@ public class Estudiante extends Persona{
     @Override
     public String toString() {
         return " | " + apellido + ", " + nombre +
-                " - Nro Legajo: "+ legajo;
+                " - Legajo: " + legajo + " | ";
     }
 }

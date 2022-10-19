@@ -1,19 +1,27 @@
 import java.util.Arrays;
-import java.util.List;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 public class Materia implements iInformacion {
 	// Atributos
 	private String nombre;
 	private Profesor titular;
-	private final List<Estudiante> estudiantes;
+	private LinkedList<Estudiante> estudiantes;
 
 	// Métodos propios
 	public void agregarEstudiante(Estudiante estudiante) {
 		estudiantes.add(estudiante);
 	}
 
-	public void eliminarEstudiante(String nombre) {
-		estudiantes.removeIf(estudiante -> estudiante.getNombre().equals(nombre));
+	public void eliminarEstudiante(String nombreEstudiante) {
+		Iterator<Estudiante> iterador = estudiantes.iterator();
+		while (iterador.hasNext()) {
+			String estudianteEliminar = iterador.next().getNombre();
+			if (estudianteEliminar.equalsIgnoreCase(nombreEstudiante)) {
+				iterador.remove();
+				System.out.println(nombreEstudiante.toUpperCase() + " fue eliminado");
+			}
+		}
 	}
 
 	public void modificarTitular(Profesor profesor) {
@@ -21,7 +29,12 @@ public class Materia implements iInformacion {
 	}
 
 	// Constructor
-	public Materia(String nombre, Profesor titular, List<Estudiante> estudiantes) {
+	public Materia(String nombre) {
+		this.nombre = nombre;
+		this.estudiantes = new LinkedList<>();
+	}
+
+	public Materia(String nombre, Profesor titular, LinkedList<Estudiante> estudiantes) {
 		this.nombre = nombre;
 		this.titular = titular;
 		this.estudiantes = estudiantes;
@@ -44,16 +57,20 @@ public class Materia implements iInformacion {
 		this.titular = titular;
 	}
 
-	public List<Estudiante> getEstudiantes() {
+	public LinkedList<Estudiante> getEstudiantes() {
 		return estudiantes;
+	}
+
+	public void setEstudiantes(LinkedList<Estudiante> estudiantes) {
+		this.estudiantes = estudiantes;
 	}
 
 	// Salida para todos los datos
 	@Override
 	public String toString() {
-		return "\n\t|--> " + nombre + "\n" +
-			"\t\tTitular: "  + titular + "\n" +
-			"\t\tEstudiantes: " + estudiantes;
+		return "\n\t\t|-> " + nombre + "\n" +
+			"\t\t\tTitular: "  + titular + "\n" +
+			"\t\t\tEstudiantes: " + estudiantes;
 	}
 
 	// Métodos de la Interface
@@ -64,10 +81,11 @@ public class Materia implements iInformacion {
 
 	@Override
 	public String listarContenido() {
-		String[] arregloContenido = new String[estudiantes.size()];
+		String[] contenido = new String[estudiantes.size()];
 		for (int i = 0; i < estudiantes.size(); i++) {
-			arregloContenido[i] = estudiantes.get(i).getNombre() + " " + estudiantes.get(i).getApellido();
+			contenido[i] = estudiantes.get(i).getApellido() + " " + estudiantes.get(i).getNombre();
 		}
-		return Arrays.toString(arregloContenido);
+		Arrays.sort(contenido);
+		return Arrays.toString(contenido);
 	}
 }

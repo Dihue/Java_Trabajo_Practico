@@ -4,9 +4,9 @@ public class Profesor extends Persona{
     private int antiguedad;
 
     // Constructor
-    public Profesor(String nombre, String apellido, int legajo, double basico, int antiguedad) {
+    public Profesor(String nombre, String apellido, int legajo, int antiguedad) {
         super(nombre, apellido, legajo);
-        this.basico = basico;
+        this.basico = 9999.99;
         this.antiguedad = antiguedad;
     }
 
@@ -30,10 +30,10 @@ public class Profesor extends Persona{
     
 @Override
     public String toString(){
-        return " | " + apellido + ", " + nombre +
-            " - Nro Legajo: "+ legajo + "\n" +
-            "Sueldo básico: "+basico + "\n" +
-            "Años de antigüedad: "+ antiguedad;
+        return apellido + ", " + nombre +
+            " - Legajo: " + legajo +
+            " - Sueldo básico: " + basico +
+            " - Años de antigüedad: " + antiguedad;
     }
 
     public double calcularSueldo(double basico){
